@@ -5,7 +5,9 @@
     alt: Rhapsody app home page
   description: >-
     A semester-long project for the Database Concepts class (CSE 30246), Rhapsody is a highly visual music recommendation system. We collected metadata on tens of thousands of songs and from that corpus constructed a graph of songs, artists, and albums. Users could explore this graph visually online, and receive recommendations based on a random walk with restart algorithm applied to their preferences.
-  link: https://github.com/wbadart/rhapsody
+  link:
+    href: https://github.com/wbadart/rhapsody
+    name: github.com/wbadart/rhapsody
 
 - title: Pen
   img:
@@ -20,7 +22,9 @@
     alt: Global terrorism database
   description: >-
     HackTerror is a data analysis tool which enables counter-terrorism agents to cross reference many sources of data on terrorism to forecast terror events. Written for the 2016 Booz Allen internal counter-terrorism hackathon, this project is an exercise in quick, small-team, data application development in Python.
-  link: https://github.com/wbadart/HackTerror
+  link:
+    href: https://github.com/wbadart/HackTerror
+    name: github.com/wbadart/HackTerror
 
 - title: Threaded Web Parser
   img:
@@ -28,7 +32,9 @@
     alt: Fun with C++
   description: >-
     As a project for Operating Systems (Spring \'17), my sister and I wrote a web parser that leveraged the pthread library in C++. The program features a thread-safe queue-like data structure, instances of which can be chained together, forming a threaded pipeline of data.
-  link: https://github.com/wbadart/KeywordFinder
+  link:
+    href: https://github.com/wbadart/KeywordFinder
+    name: github.com/wbadart/KeywordFinder
 
 - title: The Bald & the Beautiful Site
   img:
@@ -36,7 +42,9 @@
     alt: TBAB
   description: >-
     My first pro-bono freelance project, the new \"The Bald & the Beautiful\" (TBAB) site was an excellent exercise in design principles and code simplicity. The latter was of particular importance since the site, now that it's complete, is maintained by individuals whose only exposure to web development is the handful of tips I gave them sending the files over.
-  link: http://nd.edu/~tbab
+  link:
+    href: http://nd.edu/~tbab
+    name: nd.edu/~tbab
 
 - title: Remix Redesign Project
   img:
@@ -51,7 +59,9 @@
     alt: UROC
   description: >-
       Connecting Notre Dame CSE faculty and their research to undergrads. The site is a job board of sorts, where faculty can create accounts and post openings in their labs and research projects. UROC has been a unique and fun opportunity for me to research and implement security features on a site with a good number of active users. The site also features a dynamic MVC architecture with real-time search and sort.
-  link: http://m-lab.cse.nd.edu:4000
+  link:
+    href: http://m-lab.cse.nd.edu:4000
+    name: m-lab.cse.nd.edu
 
 - title: Oracle Quest
   img:
@@ -67,7 +77,9 @@
     alt: a-maze-ing
   description: >-
     A small 3D maze game built on the Panda3D engine. Focused on taking advantage of OOP and features of C++11. This team effort was the culminating project of the Fundamentals of Computing II class (Spring \'16). My work focused on implementing the class hierarchy, from the engine-wrapping "Game" class down to the abstract "Object" class and its children.
-  link: https://github.com/wbadart/Final-Project
+  link:
+    href: https://github.com/wbadart/Final-Project
+    name: github.com/wbadart/Final-Project
 
 - title: Multimedia Portfolio
   img:
@@ -75,4 +87,6 @@
     alt: ePortfolio
   description: >-
     Digication-based portfolio for my Applied Multimedia Technology class. The site features hundreds of custom CSS rules to help distinguish it from the \default portfolio.\" Won the ePortfolio Excellence Award.
-  link: https://nd.digication.com/wbadart-media
+  link:
+    href: https://nd.digication.com/wbadart-media
+    name: nd.digication.com/wbadart-media

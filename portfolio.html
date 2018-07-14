@@ -48,7 +48,9 @@ permalink: /portfolio
 
                 <div class="proj-body">
                     <div class="img-frame">
-                        <img src="/assets/img/{{ proj.img.src }}" alt="{{ proj.img.alt }}">
+                        <a href="/assets/img/{{ proj.img.src }}" target="_blank">
+                            <img src="/assets/img/{{ proj.img.src }}" alt="{{ proj.img.alt }}">
+                        </a>
                     </div>
                     <p>{{ proj.description }}</p>
                 </div>
@@ -56,7 +58,7 @@ permalink: /portfolio
                 <div class="proj-link">
                     <p>
                         {% if proj.link %}
-                        <a href="{{ proj.link }}">{{ proj.link }}</a>
+                        <a href="{{ proj.link.href }}">{{ proj.link.name }}</a>
                         {% else %}
                         Not yet live
                         {% endif %}
