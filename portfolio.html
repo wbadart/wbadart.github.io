@@ -1,0 +1,78 @@
+---
+permalink: /portfolio
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio | Will Badart</title>
+
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- <script src="./assets/js/analytics.js"></script> -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58830112-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-58830112-1');
+    </script>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Portfolio</h1>
+
+        <p>
+            <a href="/">Home</a> |
+            <a href="https://github.com/wbadart" target="_blank">
+                <i class="fa fa-external-link"></i>
+                Github
+            </a>
+        </p>
+
+        <div>
+            {% for proj in site.data.projects %}
+            <div class="proj">
+
+                <div class="proj-header">
+                    <h3>{{ proj.title }}</h3>
+                </div>
+
+                <div class="proj-body">
+                    <div class="img-frame">
+                        <img src="/assets/img/{{ proj.img.src }}" alt="{{ proj.img.alt }}">
+                    </div>
+                    <p>{{ proj.description }}</p>
+                </div>
+
+                <div class="proj-link">
+                    <p>
+                        {% if proj.link %}
+                        <a href="{{ proj.link }}">{{ proj.link }}</a>
+                        {% else %}
+                        Not yet live
+                        {% endif %}
+                    </p>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+
+        <footer>
+            <p>
+                For more examples of my work, please visit my <a href="https://github.com/wbadart" target="_blank"><i class="fa fa-external-link"></i>Github profile</a>.
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>
