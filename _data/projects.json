@@ -1,5 +1,10 @@
 [
     {
+        "title": "",
+        "img": { "src": "", "alt": "" },
+        "description": ""
+    },
+    {
         "title": "Threaded Web Parser",
         "img": { "src": "./assets/img/threads.png", "alt": "Fun with C++" },
         "description": "As a project for Operating Systems (Spring '17), my sister and I wrote a web parser that leveraged the pthread library in C++. The program features a thread-safe queue-like data structure, instances of which can be chained together, forming a threaded pipeline of data.",
