@@ -33,8 +33,7 @@ permalink: /portfolio
         <p>
             <a href="/">Home</a> |
             <a href="https://github.com/wbadart" target="_blank">
-                <i class="fa fa-external-link"></i>
-                Github
+                <i class="fa fa-external-link"></i>Github
             </a>
         </p>
 
@@ -58,7 +57,9 @@ permalink: /portfolio
                 <div class="proj-link">
                     <p>
                         {% if proj.link %}
-                        <a href="{{ proj.link.href }}">{{ proj.link.name }}</a>
+                        <a href="{{ proj.link.href }}" target="_blank">
+                            <i class="fa fa-external-link"></i>{{ proj.link.name }}
+                        </a>
                         {% else %}
                         Not yet live
                         {% endif %}
