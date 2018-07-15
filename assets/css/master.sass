@@ -15,6 +15,8 @@
 
 $primary-gray: #666
 $secondary-gray: #aaa
+$accent-light: #356b73
+$accent-dark: #4a95a1
 
 html, body
   height: 100%
@@ -33,7 +35,6 @@ h1
     border: 3px solid $secondary-gray
     border-radius: 50%
     float: right
-
     $img-height: 1.7em
     height: $img-height
     margin-top: -$img-height / 4
@@ -43,12 +44,12 @@ h3
   margin-bottom: 5px
 
 a
-  color: #356b73
+  color: $accent-light
   text-decoration: none
   &:hover
     text-decoration: underline
   &:visited
-  color: #4a95a1
+  color: $accent-dark
   i
     margin-right: 0.3em
 
@@ -81,9 +82,6 @@ footer
 
 .container
   margin: auto
-  #projects-frame
-    margin-top: 20px
-    text-align: left
   &.flex
     align-items: normal
     display: flex
