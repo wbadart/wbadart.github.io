@@ -69,7 +69,9 @@
     alt: Oracle
   description: >-
     A study tool inspired by an assignment early in the Spring \'16 semester. Challenges undertakers to find and decrypt a password which unlocks a quiz game. Built with Python, the program uses low level system calls to implement its two \characters.\" Curly and The Oracle (the characters) are forking TCP servers which make heavy use of the Python socket module.
-  link: https://github.com/wbadart/Oracle
+  link:
+    src: https://github.com/wbadart/Oracle
+    name: github.com/wbadart/Oracle
 
 - title: Panda3D Maze Game
   img:
