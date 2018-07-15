@@ -11,29 +11,45 @@
  * created: APR 2017
  */
 
+@import 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
+
+$primary-gray: #666
+$secondary-gray: #aaa
+
 body
-  color: #666
+  color: $primary-gray
   font-family: 'Josefin Sans', sans-serif
   font-size: 1.3em
 
 h1, h2, h3, h4, h5, h6
   font-weight: 100
+
 h1
   font-size: 3em
+  img
+    border: 3px solid $secondary-gray
+    border-radius: 50%
+    float: right
+    $img-height: 1.7em
+    height: $img-height
+    margin-top: -$img-height / 4
+  small
+    color: $secondary-gray
 h3
   margin-bottom: 5px
 
 a
   color: #356b73
   text-decoration: none
-  :hover
-    text-decoration: underline
-  :visited
-    color: #4a95a1
   i
-    margin-right: 0.2em
+    margin-right: 0.3em
 i
   font-size: 0.6em !important
+
+a:hover
+  text-decoration: underline
+a:visited
+  color: #4a95a1
 
 footer
   border-top: 1px solid #aaa
@@ -60,7 +76,6 @@ footer
 
 .container
   margin: auto
-  text-align: center
 .container #projects-frame
   margin-top: 20px
   text-align: left
@@ -73,7 +88,7 @@ footer
   .proj-body p
     width: 100%
   .img-frame
-    display: none
+    width: 100%
 
 @media all and (min-width: 570px) and (max-width: 900px)
   .container
