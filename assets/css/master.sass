@@ -86,10 +86,6 @@ footer
 
 .container
   margin: auto
-  &>*:first-child.bump
-    padding-top: 2em
-  &>*:last-child
-    padding-bottom: 2em
   &.flex
     align-items: normal
     display: flex
@@ -116,3 +112,10 @@ footer
 @media all and (min-width: 900px)
   .container
     width: 70%
+
+@media all and (max-height: 409px)
+  .container
+    &>*:first-child.bump
+      padding-top: 3em
+    &>*:last-child
+      padding-bottom: 3em
