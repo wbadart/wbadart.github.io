@@ -6,14 +6,27 @@ permalink: /contact
 
 <div class="container flex">
     <h1>Contact</h1>
-    <p>
-        e: wbadart (at) pm (dot) me
-    </p>
+    <table class="no-fa">
+        {% for profile in site.data.profiles %}
+          <tr>
+              <td><i class="fa fa-{{ profile.icon }}"></i></td>
+              <td>
+                  {% if profile.link %}
+                    <a href="https://{{ profile.link }}" target="_blank">{{ profile.text}}<i class="fa fa-external-link"></i></a>
+                  {% else %}
+                    {{ profile.text }}
+                  {% endif %}
+              </td>
+          </tr>
+        {% endfor %}
+    </table>
+    <!-- <p><ul class="no-bullet no-fa"> -->
+    <!--     <li><i class="fa fa-envelope-o"></i> wbadart (at) pm (dot) me</li> -->
+    <!--     <li><i class="fa fa-linkedin"></i> /in/wbadart</li> -->
+    <!-- </ul></p> -->
     <p>
         <a href="/">Home</a> |
-        <a href="https://blog.wbadart.info" target="_blank">
-            Blog<i class="fa fa-external-link"></i></a> |
-        <a href="https://linkedin.com/in/wbadart" target="_blank">
-            LinkedIn<i class="fa fa-external-link"></i></a>
+        <a href="https://blog.willbadart.com" target="_blank">
+            Blog<i class="fa fa-external-link"></i></a>
     </p>
 </div>
