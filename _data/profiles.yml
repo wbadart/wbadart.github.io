@@ -1,10 +1,6 @@
 - text: will (at) willbadart (dot) com
   icon: envelope-o
 
-- text: C0BFCABCFFB2398B
-  icon: key
-  link: hkps.pool.sks-keyservers.net/pks/lookup?op=get&search=0xC0BFCABCFFB2398B
-
 - text: "@wbadart"
   icon: github
   link: github.com/wbadart
@@ -16,3 +12,7 @@
 - text: in/wbadart
   icon: linkedin
   link: linkedin.com/in/wbadart
+
+- text: B1B7 F6AF 5308 49E6 6D9A  D057 C0BF CABC FFB2 398B
+  icon: key
+  link: hkps.pool.sks-keyservers.net/pks/lookup?op=get&search=0xC0BFCABCFFB2398B
