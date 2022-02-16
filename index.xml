@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Personal Site</title>
+    <link>https://willbadart.com/</link>
+    <description>Recent content in Home on Personal Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Oct 2020 08:46:54 -0400</lastBuildDate><atom:link href="https://willbadart.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust Is Cool</title>
+      <link>https://willbadart.com/posts/rust-is-cool/</link>
+      <pubDate>Thu, 15 Oct 2020 08:46:54 -0400</pubDate>
+      
+      <guid>https://willbadart.com/posts/rust-is-cool/</guid>
+      <description>I recently set out to learn the Rust programming language. Why? Because new languages are fun and maybe I&amp;rsquo;ll use it some day.
+It also so happens that lots of smart people from the functional programming communities I lurk in also like Rust . This was fascinating to me at first; my experience with functional programming has been about as far away from machine code as you can imagine. Meanwhile, I understood Rust to be something of a modernized C++.</description>
+    </item>
+    
+    <item>
+      <title>The Step After Notebooks</title>
+      <link>https://willbadart.com/posts/notebook-driven-ds/</link>
+      <pubDate>Thu, 19 Mar 2020 16:35:07 -0700</pubDate>
+      
+      <guid>https://willbadart.com/posts/notebook-driven-ds/</guid>
+      <description>The quality of an analysis is measured by impact. Analytics exists to solve client problems, and with the volume of client data continuing to explode, data science represents a vital opportunity for impact. People realize this: IBM forecasts that there will be almost 3,000,000 data science jobs by the end of this year.
+Unfortunately, data science is a complex domain, and what I&amp;rsquo;ll call notebook-driven development, the popular technique of conducting an analysis primarily in Jupyter notebooks, does little to manage that complexity.</description>
+    </item>
+    
+    <item>
+      <title>Arguing for Correctness</title>
+      <link>https://willbadart.com/posts/arguing-for-correctness/</link>
+      <pubDate>Fri, 10 Jan 2020 17:01:06 -0700</pubDate>
+      
+      <guid>https://willbadart.com/posts/arguing-for-correctness/</guid>
+      <description>One of the most important jobs of a software engineer is convincing people that a program is correct with respect to some specification or other. Perhaps most often this person is ourself, but it can also be a teammate, project manager, or client.
+It would be lovely if we could formulate &amp;ldquo;correctness&amp;rdquo; as a logical conclusion, which we could deductively argue using properties of our programs as premises. That is, if we could actually prove that a program is correct.</description>
+    </item>
+    
+  </channel>
+</rss>

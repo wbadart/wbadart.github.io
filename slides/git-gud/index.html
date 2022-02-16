@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>Git Gud</title>
+
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/reveal-js/css/reset.css">
+<link rel="stylesheet" href="/reveal-js/css/reveal.css"><link rel="stylesheet" href="/reveal-js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="/highlight-js/default.min.css">
+    
+  </head>
+  <body>
+    
+    <div class="reveal">
+      <div class="slides">
+  
+
+    <section>
+
+<section data-shortcode-section>
+<h1 id="git-gud">Git Gud</h1>
+<p><em>May 14, 2020</em></p>
+<p>Will Badart</p>
+<p><small><a href="mailto:Badart_William@bah.com">Badart_William@bah.com</a>
+</small></p>
+
+</section>
+</section><section>
+
+
+<section data-shortcode-section>
+<h1 id="why-should-i-git-gud">Why should I git gud?</h1>
+</section><section>
+<h2 id="credibility">Credibility</h2>
+<ul>
+<li>Improve <strong>explainability</strong> with the ability to trace the evolution of your
+model all the way back to day one</li>
+<li>Using established change management techniques demonstrates process maturity</li>
+</ul>
+</section><section>
+<h2 id="collaboration">Collaboration</h2>
+<ul>
+<li>Automatically reconcile changes from many contributors</li>
+<li>Improve <strong>replicability</strong> by delivering a code with a common, open mechanism</li>
+</ul>
+</section><section>
+<h2 id="sanity">Sanity</h2>
+<ul>
+<li>Stakeholders aren&rsquo;t the only ones benefiting from a written history&hellip;</li>
+<li>Never again wonder: &ldquo;how the hell did I get here?&rdquo;</li>
+</ul>
+
+</section>
+</section><section>
+
+
+<section data-shortcode-section>
+<h1 id="how-do-i-git-gud">How do I git gud?</h1>
+</section><section>
+<h2 id="learn-the-tool">Learn the tool</h2>
+<ul>
+<li><a href="https://rogerdudler.github.io/git-guide" target="_blank" rel="noopener">Git - The Simple Guide</a>
+</li>
+<li><a href="https://learngitbranching.js.org" target="_blank" rel="noopener">Learn Git Branching</a>
+</li>
+</ul>
+</section><section>
+<h2 id="in-short">In short&hellip;</h2>
+<ul>
+<li><strong>Record incremental changes to the project in git <em>commits</em></strong></li>
+</ul>
+</section><section>
+<h2 id="for-example">For example</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>commit 990e1d429680297fd2c1c44cf17c82a4254d200e
+Author: Will Badart &lt;badart_william@bah.com&gt;
+Date:   Wed May 13 19:33:23 2020 -0700
+
+    Add shuffling to preprocessing pipeline
+    
+    My advanced solution helps prevent overfitting by
+    randomizing the dataset each run, before
+    partitioning it.
+
+diff --git a/preprocess.py b/preprocess.py
+index 7fc7534..a157c89 100644
+<span style="color:#f92672">--- a/preprocess.py
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ b/preprocess.py
+</span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -1,10 +1,12 @@
+</span><span style="color:#75715e"></span> import pandas as pd
+ from sklearn.model_selection import train_test_split
+ from sklearn.preprocessing import MinMaxScaler
+<span style="color:#a6e22e">+from sklearn.utils import shuffle
+</span><span style="color:#a6e22e"></span> 
+ 
+ def preprocess(df):
+     &#34;&#34;&#34;Apply my fancy pipeline to the DataFrame.&#34;&#34;&#34;
+<span style="color:#a6e22e">+    df = shuffle(df)
+</span><span style="color:#a6e22e"></span>     y = df.pop(&#34;label&#34;)
+     X = df.values
+     scaler = MinMaxScaler()
+</code></pre></div></section><section>
+<p>Commits can be read <em>and</em> manipulated</p>
+</section><section>
+<h2 id="in-short-1">In short&hellip;</h2>
+<ul>
+<li>Record incremental changes to the project in git <em>commits</em></li>
+<li><strong>Organize work with git <em>branches</em></strong></li>
+</ul>
+</section><section>
+<h2 id="for-example-1">For example</h2>
+<p><img src="/img/git-gud/branches.png" alt="Git branches"></p>
+</section><section>
+<h2 id="further-reading">Further reading</h2>
+<ul>
+<li><a href="https://guides.github.com/introduction/flow" target="_blank" rel="noopener">GitHub Flow</a>
+</li>
+<li><a href="https://githowto.com" target="_blank" rel="noopener">githowto</a>
+</li>
+<li>Another <a href="https://github.github.com/training-kit/downloads/github-git-cheat-sheet" target="_blank" rel="noopener">git cheat
+sheet</a>
+</li>
+</ul>
+
+</section>
+</section><section>
+
+
+<section data-shortcode-section>
+<h1 id="tracking-data-science-projects">Tracking Data Science Projects</h1>
+</section><section>
+<h2 id="challenges">Challenges</h2>
+<ul>
+<li>Working with more than just code (data, notebooks, environment&hellip;)</li>
+<li>Rapid iteration/ trial and error yields high volume of changes</li>
+</ul>
+
+</section>
+</section><section>
+
+
+<section data-shortcode-section>
+<h1 id="more-than-just-code-_data_">More than just code: <em>data</em></h1>
+</section><section>
+<h2 id="the-challenge">The Challenge</h2>
+<ul>
+<li>You <em>could</em> track your data files with git</li>
+<li>Git scales surprisingly well to huge files&hellip;</li>
+<li>&hellip; but you&rsquo;re doing more work than you need to</li>
+<li>It&rsquo;s much easier to track a <em>recipe</em> for getting the data than to track the
+data itself</li>
+</ul>
+</section><section>
+<h2 id="good">Good</h2>
+<p>Add <code>get_data.sh</code> to your project:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>mkdir -p data/raw
+wget -O data/raw/initial_dataset.csv
+chmod -w data/raw/*  <span style="color:#75715e"># important! prevent squashing raw data</span>
+</code></pre></div></section><section>
+<h2 id="better">Better</h2>
+<p>Record data dependencies with a Makefile:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape><span style="color:#a6e22e">data/raw/initial_dataset.csv</span><span style="color:#f92672">:</span> data/raw
+    wget -O data/raw/initial_dataset.csv
+    chmod -w data/raw/*
+    
+<span style="color:#a6e22e">data/raw</span><span style="color:#f92672">:</span>
+    mkdir -p data/raw
+</code></pre></div><p><a href="https://drivendata.github.io/cookiecutter-data-science" target="_blank" rel="noopener"><em>Data is immutable and analysis is a
+DAG</em></a>
+</p>
+
+</section>
+</section><section>
+
+
+<section data-shortcode-section>
+<h1 id="more-than-just-code-_notebooks_">More than just code: <em>notebooks</em></h1>
+</section><section>
+<h2 id="the-challenge">The challenge</h2>
+<ul>
+<li>Notebooks contain much of our day-to-day work and experimentation, so their
+content must be tracked somehow&hellip;</li>
+<li>&hellip; but <code>.ipynb</code> files are big blobs of JSON under the hood which don&rsquo;t play
+nice with git</li>
+</ul>
+</section><section>
+<h2 id="good">Good</h2>
+<p>Use <a href="https://nbdime.readthedocs.io/en/latest" target="_blank" rel="noopener">nbdime</a>
+ to view and manage
+notebook changes</p>
+</section><section>
+<p>Here&rsquo;s a regular diff from adding just one cell to a notebook</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>diff --git a/Hello World.ipynb b/Hello World.ipynb
+index 7fec515..6cd9078 100644
+<span style="color:#f92672">--- a/Hello World.ipynb	
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ b/Hello World.ipynb	
+</span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -1,6 +1,49 @@
+</span><span style="color:#75715e"></span> {
+<span style="color:#f92672">- &#34;cells&#34;: [],
+</span><span style="color:#f92672">- &#34;metadata&#34;: {},
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+ &#34;cells&#34;: [
+</span><span style="color:#a6e22e">+  {
+</span><span style="color:#a6e22e">+   &#34;cell_type&#34;: &#34;code&#34;,
+</span><span style="color:#a6e22e">+   &#34;execution_count&#34;: 1,
+</span><span style="color:#a6e22e">+   &#34;metadata&#34;: {},
+</span><span style="color:#a6e22e">+   &#34;outputs&#34;: [
+</span><span style="color:#a6e22e">+    {
+</span><span style="color:#a6e22e">+     &#34;name&#34;: &#34;stdout&#34;,
+</span><span style="color:#a6e22e">+     &#34;output_type&#34;: &#34;stream&#34;,
+</span><span style="color:#a6e22e">+     &#34;text&#34;: [
+</span><span style="color:#a6e22e">+      &#34;Hello world!\n&#34;
+</span><span style="color:#a6e22e">+     ]
+</span><span style="color:#a6e22e">+    }
+</span><span style="color:#a6e22e">+   ],
+</span><span style="color:#a6e22e">+   &#34;source&#34;: [
+</span><span style="color:#a6e22e">+    &#34;print(\&#34;Hello world!\&#34;)&#34;
+</span><span style="color:#a6e22e">+   ]
+</span><span style="color:#a6e22e">+  },
+</span><span style="color:#a6e22e">+  {
+</span><span style="color:#a6e22e">+   &#34;cell_type&#34;: &#34;code&#34;,
+</span><span style="color:#a6e22e">+   &#34;execution_count&#34;: null,
+</span><span style="color:#a6e22e">+   &#34;metadata&#34;: {},
+</span><span style="color:#a6e22e">+   &#34;outputs&#34;: [],
+</span><span style="color:#a6e22e">+   &#34;source&#34;: []
+</span><span style="color:#a6e22e">+  }
+</span><span style="color:#a6e22e">+ ],
+</span><span style="color:#a6e22e">+ &#34;metadata&#34;: {
+</span><span style="color:#a6e22e">+  &#34;kernelspec&#34;: {
+</span><span style="color:#a6e22e">+   &#34;display_name&#34;: &#34;Python 3&#34;,
+</span><span style="color:#a6e22e">+   &#34;language&#34;: &#34;python&#34;,
+</span><span style="color:#a6e22e">+   &#34;name&#34;: &#34;python3&#34;
+</span><span style="color:#a6e22e">+  },
+</span><span style="color:#a6e22e">+  &#34;language_info&#34;: {
+</span><span style="color:#a6e22e">+   &#34;codemirror_mode&#34;: {
+</span><span style="color:#a6e22e">+    &#34;name&#34;: &#34;ipython&#34;,
+</span><span style="color:#a6e22e">+    &#34;version&#34;: 3
+</span><span style="color:#a6e22e">+   },
+</span><span style="color:#a6e22e">+   &#34;file_extension&#34;: &#34;.py&#34;,
+</span><span style="color:#a6e22e">+   &#34;mimetype&#34;: &#34;text/x-python&#34;,
+</span><span style="color:#a6e22e">+   &#34;name&#34;: &#34;python&#34;,
+</span><span style="color:#a6e22e">+   &#34;nbconvert_exporter&#34;: &#34;python&#34;,
+</span><span style="color:#a6e22e">+   &#34;pygments_lexer&#34;: &#34;ipython3&#34;,
+</span><span style="color:#a6e22e">+   &#34;version&#34;: &#34;3.8.2&#34;
+</span><span style="color:#a6e22e">+  }
+</span><span style="color:#a6e22e">+ },
+</span><span style="color:#a6e22e"></span>  &#34;nbformat&#34;: 4,
+  &#34;nbformat_minor&#34;: 4
+ }
+</code></pre></div></section><section>
+<p>And here&rsquo;s how it looks with nbdime&rsquo;s <code>nbdiff-web</code></p>
+<p><img src="/img/git-gud/nbdiff-web.png" alt="nbdiff-web"></p>
+</section><section>
+<h2 id="better">Better</h2>
+<ul>
+<li>nbdime is a great tool, but it&rsquo;s a band-aid</li>
+<li>Jupyter Notebook is a literate programming tool, not an IDE</li>
+<li>A notebook isn&rsquo;t a module; it imports a module and communicates the results
+of its use through visualization and prose</li>
+<li>So move the heavy lifting into a proper Python module (known more commonly as
+a <code>.py</code> file)</li>
+</ul>
+</section><section>
+<p>It says so right on the tin:</p>
+<blockquote>
+<p>The Jupyter Notebook is an open-source web application that allows you to
+create and share documents that contain live code, equations, visualizations
+and narrative text.</p>
+<p>— jupyter.org</p>
+</blockquote>
+<p>A <code>.ipynb</code> file isn&rsquo;t so much a program to be run by a machine as it is a
+report to be read by a human</p>
+</section><section>
+<h2 id="with-your-code-in-a-module">With your code in a module</h2>
+<ul>
+<li>It&rsquo;s no longer frozen in your input cells; you can import it from anywhere,
+including your notebook</li>
+<li>You can load it into a proper <strong>test suite</strong> (big credibility points!)</li>
+<li>You can load it <strong>into another project</strong> (it&rsquo;s getting DRY in here!)</li>
+<li>In short, you unlock all the software engineering goodies unavailable to
+notebook code</li>
+</ul>
+</section><section>
+<h2 id="pro-tip">Pro Tip</h2>
+<p>Add this cell to your notebook, before your imports</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape><span style="color:#f92672">%</span>load_ext autoreload
+<span style="color:#f92672">%</span>autoreload <span style="color:#ae81ff">2</span>
+</code></pre></div><p>Now import you library code</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape><span style="color:#f92672">from</span> my_project_lib <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</code></pre></div><small>
+<ul>
+<li>
+As you work on <code>my_project_lib.py</code>, the
+notebook will automatically use those changes, as though the code were written
+directly in the notebook
+</li>
+<li>
+Have your cake and eat it too :)
+</li>
+</ul>
+</small>
+
+</section>
+</section><section>
+
+
+<section data-shortcode-section>
+<h2 id="why-cant-i-track-all-these-changes">Why can&rsquo;t I track all these changes??</h2>
+<p><img src="/img/git-gud/limes_guy.jpg" alt="why can&rsquo;t i&hellip;"></p>
+</section><section>
+<h2 id="the-challenge">The challenge</h2>
+<ul>
+<li>One of our most important jobs is trying different combinations of
+algorithms, architectures, and parameters to see which gives the best
+performance&hellip;</li>
+<li>&hellip; but this is a huge space of models which would be prohibitively tedious
+to track one at a time with individual commits</li>
+</ul>
+</section><section>
+<p>Recognize that each tweak/ re-run cycle is a <strong>trial</strong> in a greater experiment</p>
+</section><section>
+<h2 id="good">Good</h2>
+<p>Track each trial in a commit anyway</p>
+<ul>
+<li>After tweaking and re-running the notebook, commit the changes to it</li>
+<li>Write a message about what you tried, why you tried it, and what happened</li>
+</ul>
+</section><section>
+<h2 id="better">Better</h2>
+<p>Track experiments with MLflow</p>
+<p><img src="https://mlflow.org/images/MLflow-logo-final-white-TM.png" alt="mlflow"></p>
+</section><section>
+<h2 id="easy-money">Easy money</h2>
+<ol>
+<li>Install</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>pip install mlflow
+</code></pre></div><ol start="2">
+<li>Sprinkle in some tracking</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape><span style="color:#f92672">import</span> mlflow
+<span style="color:#75715e"># ...</span>
+NUM_EPOCHS <span style="color:#f92672">=</span> <span style="color:#ae81ff">7500</span>
+mlflow<span style="color:#f92672">.</span>log_parameter(<span style="color:#e6db74">&#34;NUM_EPOCHS&#34;</span>, NUM_EPOCHS)
+<span style="color:#75715e"># ...</span>
+<span style="color:#66d9ef">for</span> epoch <span style="color:#f92672">in</span> range(NUM_EPOCHS):
+    <span style="color:#75715e"># ...</span>
+    training_accuracy <span style="color:#f92672">=</span> accuracy_score(y_test, y_pred)
+    mlflow<span style="color:#f92672">.</span>log_metric(<span style="color:#e6db74">&#34;TRAINING_ACCURACY&#34;</span>, training_accuracy)
+</code></pre></div><ol start="3">
+<li>&hellip;</li>
+</ol>
+</section><section>
+<h2 id="profit">Profit</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>mlflow ui
+</code></pre></div><p><img src="/img/git-gud/mlflow-web-ui.png" alt="mlflow ui"></p>
+<p><small>Image via <a
+href="https://databricks.com/blog/2018/06/05/introducing-mlflow-an-open-source-machine-learning-platform.html">DataBricks</a></small></p>
+
+</section>
+</section><section>
+
+
+<section data-shortcode-section>
+<h1 id="more-than-just-code-_environment_">More than just code: <em>environment</em></h1>
+</section><section>
+<p>Your results are more than the sum of their source code. They are equally (and
+implicitly) dependent on your compute environment.</p>
+</section><section>
+<h2 id="the-challenge">The challenge</h2>
+<ul>
+<li>Reproducing results is predicated on reproducing all experimental
+conditions&hellip;</li>
+<li>&hellip; but unlike the raw text of a source file, &ldquo;environment&rdquo; is a rather
+abstract thing
+<ul>
+<li>the libraries used, their versions, your Python installation, the state of
+the file system, etc.</li>
+</ul>
+</li>
+</ul>
+</section><section>
+<h2 id="good">Good</h2>
+<p>Maintain a requirements file</p>
+</section><section>
+<h2 id="pros">Pros</h2>
+<ul>
+<li>Popular, conventional solution</li>
+<li>Ability to &ldquo;freeze&rdquo; all package versions (including transitive dependencies)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>pip freeze &gt; requirements.txt
+</code></pre></div></li>
+</ul>
+<p>Good for reproducibility!</p>
+</section><section>
+<h2 id="cons">Cons</h2>
+<ul>
+<li>Mixing of transitive dependencies makes it impossible to answer &ldquo;what
+packages does <em>my</em> project use?&rdquo;</li>
+<li>Dated tooling</li>
+</ul>
+</section><section>
+<h2 id="better">Better</h2>
+<p>Use <a href="https://python-poetry.org/" target="_blank" rel="noopener">Poetry</a>
+</p>
+<p><img src="/img/git-gud/poetry.png" alt="python poetry"></p>
+</section><section>
+<h2 id="pros-1">Pros</h2>
+<ul>
+<li>They have a pretty website so you know they&rsquo;re legit</li>
+<li>Gives a more complete and detailed image of project&rsquo;s dependencies</li>
+</ul>
+<p><img src="/img/git-gud/poetry-tree.png" alt="poetry dependencies"></p>
+</section><section>
+<h2 id="pros-ctd">Pros (ctd.)</h2>
+<ul>
+<li>Makes project isolation/ virtual environment management easier</li>
+<li>Demystifies the <code>setuptools</code> arcana of packaging a project</li>
+<li>Compatible with the new
+<a href="https://www.python.org/dev/peps/pep-0518/" target="_blank" rel="noopener"><code>pyproject.toml</code></a>
+ standard</li>
+</ul>
+</section><section>
+<h2 id="even-better">Even better</h2>
+<p>Write a Dockerfile and build a container</p>
+</section><section>
+<p>Long story short, the better your experimental isolation, the more reproducible
+your results will be. Ergo, <strong>better science</strong>.</p>
+</section><section>
+<p>A <strong>container</strong> is like a diet VM that creates a (for all intents and
+purposes) totally isolated environment where you can run your experiment.</p>
+<p>A Dockerfile, which describes a container, is an extremely lightweight way to
+share that exact environment with others.</p>
+</section><section>
+<h2 id="easy-money">Easy money</h2>
+<ol>
+<li>Add <code>Dockerfile</code> to your project</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.7</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /src</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install -r requirements.txt notebook<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> jupyter notebook --allow-root<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><ol start="2">
+<li>Build the image</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>docker build -t my_awesome_model .
+</code></pre></div><ol start="3">
+<li>&hellip;</li>
+</ol>
+</section><section>
+<h2 id="thats-right-profit">That&rsquo;s right, Profit</h2>
+<p>Spin up a container to run your notebook</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>docker run -it -p 8888:8888 my_awesome_model
+</code></pre></div><small>
+<ul>
+<li>
+  Your notebook is now running at <code>localhost:8888</code> just like normal
+</li>
+<li>
+  Except as far as it can tell, it's running in the barebones Ubuntu
+  environment specified by the Dockerfile; the same environment it would see
+  when run via Docker on anyone else's machine
+</li>
+</ul>
+</small>
+</section><section>
+<p><img src="/img/git-gud/but-wait.jpg" alt="wait"></p>
+</section><section>
+<h1 id="your-project-is-now-cloud-ready">Your project is now cloud-ready</h1>
+</section><section>
+<p>With a Docker image capable of running your project, you&rsquo;re now one <code>docker push</code> away* from, say, uploading your model to an AWS container registry where
+it can be picked up and run by Fargate</p>
+<br>
+<small>* some assembly required</small>
+
+</section>
+</section><section>
+
+
+<section data-shortcode-section>
+<h1 id="what-do-i-do-now-that-i-got-gud">What do I do, now that I got gud?</h1>
+</section><section>
+<h2 id="whatever-you-want">Whatever you want!</h2>
+<small>
+By learning git, you've unlocked a new universe of potential for you project
+</small>
+<ul>
+<li>Implement a branching workflow with your team to tighten up release cycles</li>
+<li>Leverage Docker to run your project anywhere; train in the cloud and make an
+inference engine out of an on-prem Kubernetes cluster</li>
+<li>Take advantage of git services and integrations; have Jenkins retrain your
+model every Saturday, and host your documentation on GitHub Pages (like this
+deck!)</li>
+</ul>
+</section><section>
+<h2 id="keep-learning">Keep learning</h2>
+<ul>
+<li>Do <a href="https://github.com/praqma-training/git-katas" target="_blank" rel="noopener">Git Kata</a>
+</li>
+<li>Read the <a href="https://guides.github.com" target="_blank" rel="noopener">GitHub Guides</a>
+</li>
+<li>While you&rsquo;re at it, read the <a href="https://opensource.guide" target="_blank" rel="noopener">Open Source Guides</a>
+</li>
+<li>Read more of my opinions <a href="https://blog.willbadart.com/2019/05/19/how-i-do-an-analysis.html" target="_blank" rel="noopener">here</a>
+ and <a href="https://willbadart.com/posts/notebook-driven-ds" target="_blank" rel="noopener">here</a>
+</li>
+</ul>
+
+</section>
+</section><section>
+
+
+<section data-shortcode-section>
+<h1 id="thanks">Thanks!</h1>
+
+</section>
+</section>
+
+  
+
+
+</div>
+      
+
+    </div>
+<script type="text/javascript" src=/reveal-hugo/object-assign.js></script>
+
+<a href="/reveal-js/css/print/" id="print-location" style="display: none;"></a>
+<script type="text/javascript">
+  var printLocationElement = document.getElementById('print-location');
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = printLocationElement.href + (window.location.search.match(/print-pdf/gi) ? 'pdf.css' : 'paper.css');
+  document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+
+<script type="application/json" id="reveal-hugo-site-params">null</script>
+<script type="application/json" id="reveal-hugo-page-params">null</script>
+
+<script src="/reveal-js/js/reveal.js"></script>
+
+<script type="text/javascript">
+  
+  
+  function camelize(map) {
+    if (map) {
+      Object.keys(map).forEach(function(k) {
+        newK = k.replace(/(\_\w)/g, function(m) { return m[1].toUpperCase() });
+        if (newK != k) {
+          map[newK] = map[k];
+          delete map[k];
+        }
+      });
+    }
+    return map;
+  }
+  
+  var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
+  var revealHugoSiteParams = JSON.parse(document.getElementById('reveal-hugo-site-params').innerHTML);
+  var revealHugoPageParams = JSON.parse(document.getElementById('reveal-hugo-page-params').innerHTML);
+  
+  var options = Object.assign({},
+    camelize(revealHugoDefaults),
+    camelize(revealHugoSiteParams),
+    camelize(revealHugoPageParams));
+  Reveal.initialize(options);
+</script>
+
+
+  
+  
+  <script type="text/javascript" src="/reveal-js/plugin/markdown/marked.js"></script>
+  
+  <script type="text/javascript" src="/reveal-js/plugin/markdown/markdown.js"></script>
+  
+  <script type="text/javascript" src="/reveal-js/plugin/highlight/highlight.js"></script>
+  
+  <script type="text/javascript" src="/reveal-js/plugin/zoom-js/zoom.js"></script>
+  
+  
+  <script type="text/javascript" src="/reveal-js/plugin/notes/notes.js"></script>
+
+
+
+    
+    
+  </body>
+</html>
