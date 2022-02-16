@@ -1,0 +1,45 @@
+$base-font-size: 18px
+$charcoal:       #333
+$light-gray:     #888
+
+span.spacer
+  display:    inline-block
+  text-align: center
+  width:      1.5rem
+
+.light
+  color: $light-gray
+
+img.clear
+  border:        none
+  border-radius: none
+
+a.active
+  color:       $charcoal
+  font-weight: bold
+  &:hover
+    cursor:          default
+    text-decoration: none
+a.wip
+  cursor:         default
+  pointer-events: none
+  &::after
+    content: " (WIP)"
+    color:   $charcoal
+
+.flex-container
+  display:   flex
+  flex-wrap: wrap
+
+.small
+  color: $light-gray
+  font-size: 1rem
+
+.float-right
+  float: right
+
+.squeeze-top
+  margin-top: 0
+
+.squeeze-bottom
+  margin-bottom: 0

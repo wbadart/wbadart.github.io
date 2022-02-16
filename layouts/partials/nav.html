@@ -1,0 +1,11 @@
+<p>
+  <a href="{{ ref . "/" }}" class="{{ cond (eq .Title "Home") "active" "" }}">Home</a>
+  <span class="spacer">|</span>
+  <a href="{{ ref . "posts" }}" class="{{ cond (or (eq .Title "Blog") (eq .Section "posts")) "active" "" }}">Blog</a>
+  <span class="spacer">|</span>
+  <a href="{{ ref . "portfolio" }}" class="{{ cond (eq .Title "Portfolio") "active" "" }}">Portfolio</a>
+  <span class="spacer">|</span>
+  <a href="{{ ref . "contact" }}" class="{{ cond (eq .Title "Contact") "active" "" }}">Contact</a>
+  <!-- <span class="spacer">|</span> -->
+  <!-- <a href="TODO" class="wip"><del>Resume</del></a> --> 
+</p>

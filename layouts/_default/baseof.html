@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+{{- partial "head.html" . -}}
+<body class="{{cond (or (eq .Title "Home") (eq .Kind "404")) "flex-container" "" }}">
+  <main class="{{cond (eq .Title "Home") "flex-container" "" }}">
+    {{- block "main" . }}{{- end }}
+  </main>
+  {{ partial "matomo-tracking" . }}
+</body>
+</html>

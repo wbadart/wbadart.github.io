@@ -1,0 +1,15 @@
+{{ define "main" }}
+{{ partial "header.html" . }}
+
+{{ range .Pages }}
+  <h2 class="squeeze-bottom">
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+  <p class="float-right squeeze-top squeeze-bottom">
+    <small class="small">{{ .PublishDate.Format "January 2, 2006" }}</small>
+  </p>
+  </h2>
+  <p class="squeeze-top">{{ .Summary }}</p>
+{{ end }}
+
+{{ partial "footer.html" . }}
+{{ end }}

@@ -1,0 +1,22 @@
+- text: will (at) willbadart (dot) com
+  icon: envelope-o
+
+- text: "@wbadart"
+  icon: github
+  href: https://github.com/wbadart
+
+- text: "@wbadart"
+  icon: gitlab
+  href: https://gitlab.com/wbadart
+
+- text: "@wbadart"
+  icon: stack-overflow
+  href: https://stackoverflow.com/users/4025659/wbadart
+
+- text: in/wbadart
+  icon: linkedin
+  href: https://linkedin.com/in/wbadart
+
+- text: B1B7 F6AF 5308 49E6 6D9A  D057 C0BF CABC FFB2 398B
+  icon: lock
+  href: https://hkps.pool.sks-keyservers.net/pks/lookup?op=get&search=0xC0BFCABCFFB2398B

@@ -1,0 +1,16 @@
+{{ define "main" }}
+<header>
+  <p>
+    <a href="{{ ref . "posts" }}"><i class="fa fa-arrow-left"></i> Back to Posts</a>
+  </p>
+  <h1>{{ .Title }}</h1>
+  <p><small><em>
+    {{ .PublishDate.Format "January 2, 2006" }}
+    &nbsp;/&nbsp;
+    ~{{ .ReadingTime }}-minute read
+  </em></small></p>
+  {{ partial "nav.html" . }}
+</header>
+{{ .Content }}
+{{ partial "footer.html" . }}
+{{ end }}

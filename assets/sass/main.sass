@@ -1,0 +1,88 @@
+$fa-font-path: "/fonts"
+@import "font-awesome/font-awesome.scss"
+@import "util"
+
+html
+  background-color: white  // #fffef5
+  color:            $charcoal
+  font-size:        $base-font-size
+  height:           100%
+  line-height:      1.618
+
+body
+  font-family: 'PT Serif', serif
+  height:      100%
+  margin:      0
+
+main
+  margin:    auto
+  max-width: 680px
+  padding:   2rem
+
+@media (max-width: 618px)
+  main
+    padding: 1rem
+
+header
+  margin-top: 2rem
+  margin-bottom: 2rem
+
+footer
+  border-top:      thin solid $charcoal
+  display:         flex
+  flex-wrap:       wrap
+  justify-content: space-between
+  margin-top:      2rem
+  padding-top:     1rem
+  p
+    margin-top:    0
+    margin-bottom: 0
+
+h1, h2, h3, h4, h5, h6
+  font-family: 'Cormorant Garamond', serif
+
+h1
+  font-size:   4rem
+  line-height: 1.1   // 1.6 too high for wrapped headers
+  margin:      auto  // must come before margin-left
+  margin-left: 0
+
+h2
+  font-size: 2rem
+
+a
+  color:           #4a95a1
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+  &[target="_blank"]::after
+    content:     " \f08e"  // .fa-external-link
+    font-family: "FontAwesome"
+    font-size:   0.7rem
+
+img
+  border:        3px solid $light-gray
+  border-radius: 0.5rem
+  max-width:     100%
+
+code
+  background-color: #f1f1f1
+  border-radius:    0.5rem
+  font-family:      'Ubuntu Mono', monospace
+  padding:          4px
+
+.highlight
+  & > pre
+    border-radius: 0.5rem
+    max-height:    40rem
+    overflow:      scroll
+    padding:       1rem
+  & code  // clear custom the custom formatting set for inline code
+    background:    inherit
+    border-radius: 0
+    padding:       0
+
+td
+  padding: 0.25rem
+  &:nth-child(1)
+    text-align: center

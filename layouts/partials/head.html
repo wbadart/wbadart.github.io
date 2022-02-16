@@ -1,0 +1,27 @@
+<head>
+  <title>{{ .Title }} | Will Badart</title>
+  <meta charset="utf-8">
+  {{- hugo.Generator -}}
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="The personal site of Will Badart">
+  <style>
+    @import
+        url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=PT+Serif&family=Ubuntu+Mono&display=swap")
+  </style>
+  {{ $options := (dict "outputStyle" "compressed") }}
+  {{ with resources.Get "sass/main.sass" | resources.ToCSS $options }}
+  <style>
+    {{ .Content | safeCSS }}
+  </style>
+  {{ end }}
+  {{ if eq .Title "Home" }}
+    {{ with resources.Get "sass/home.sass" | resources.ToCSS $options }}
+    <style>
+      {{ .Content | safeCSS }}
+    </style>
+    {{ end }}
+  {{ end }}
+  <base href="{{ .Site.BaseURL }}">
+  {{ partial "favicon.html" }}
+  <link rel="canonical" href="{{ .Permalink }}">
+</head>

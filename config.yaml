@@ -1,0 +1,21 @@
+baseURL: https://willbadart.com
+languageCode: en-us
+title: Personal Site
+enableRobotsTXT: true
+theme:
+- matomo
+- reveal-hugo
+params:
+  cclicense: by-nc
+  matomo:
+    url: https://analytics.willbadart.com/analytics
+    id: 1
+outputFormats:
+  reveal:
+    baseName: index
+    mediaType: text/html
+    isHTML: true
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

@@ -1,0 +1,20 @@
+{{ define "main" }}
+{{ partial "header.html" . }}
+
+<table>
+  {{ range .Site.Data.contact }}
+    <tr>
+      <td><i class="fa fa-{{ .icon }}"></i></td>
+      <td>
+        {{ if isset . "href" }}
+          <a href="{{ .href }}" target="_blank">{{ .text }}</a>
+        {{ else }}
+          {{ .text }}
+        {{ end }}
+      </td>
+    </tr>
+  {{ end }}
+</table>
+
+{{ .Content }}
+{{ end }}
